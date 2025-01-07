@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+ 
+  
+*,::before,::after{ margin: 0; box-sizing: border-box; }   
+
+button{ padding: 0; cursor: pointer;}
+
+
+
+
+html{
+    font-size:15px;
+  
+}
+
+
+body{
+    font-family: system-ui,sans-serif;
+}
+
+
+
+.row{ display: flex; flex-flow: row wrap; }
+[class^="col-"]{ padding: 0 1rem; flex: 1 0 auto; }
+
+
+
+.col-1{ flex-basis: 8.33%; max-width: 8.33%; }
+.col-2{ flex-basis: 16.66%; max-width: 16.66%; }
+.col-3{ flex-basis: 25%; max-width: 25%; }
+.col-4{ flex-basis: 33.33%; max-width: 33.33%; }
+.col-5{ flex-basis: 41.66%; max-width: 41.66%; }
+.col-6{ flex-basis: 50%; max-width: 50%; }
+.col-7{ flex-basis: 58.33%; max-width: 58.33%; }
+.col-8{ flex-basis: 66.66%; max-width: 66.66%; }
+.col-9{ flex-basis: 75%; max-width: 75%; }
+.col-10{ flex-basis: 83.33%; max-width: 83.33%; }
+.col-11{ flex-basis: 91.66%; max-width: 91.66%; }
+.col-12{ flex-basis: 100%; max-width: 100%;}
+.flex{ display: flex;}
+.align-center{ align-items: center;}
+.justify-space-bet{ justify-content: space-between;}
+.justify-center{ justify-content: center;}
+.justify-right{ justify-content: right;}
+
+
+
+        .container{ width:386px; height: 635px; margin: auto; background-color: rgb(1, 1, 66); border-radius: 40px; box-shadow: 0 0 10px rgb(1, 1, 54); margin-top:2rem;}
+        input{ padding:100px 10px 0 10px; border-radius: 40px 40px 0 0; background: transparent;   color: #fff; font-weight: 900; font-size: 50px; width: 386px; text-align: right; border: none;}
+        input:focus{outline: none;}
+        input::placeholder{color: #fff; font-size: 100px;}
+        button{width: 70px; height: 70px; border-radius: 50%; flex-shrink: 0; background-color: rgb(2, 2, 73); color: #fff;
+            box-shadow: 0 0 5px ; border: none; font-size: 20px;}
+            button:active{box-shadow: 0 0 10px; background-color: black;}
+        .calculator{display: grid; grid-template-columns: repeat(4,1fr); grid-template-rows: repeat(5, 1fr); margin-left: 1.2rem; gap: 12px; margin-top: 1rem;}
+        .sign:active{background: rgb(95, 73, 17);}
+      
+        button:nth-child(1){grid-column: 1; grid-row: 1;}
+        button:nth-child(2){grid-column: 2; grid-row: 1;}
+        button:nth-child(3){grid-column: 3; grid-row: 1;}
+        button:nth-child(4){grid-column: 4; grid-row: 1;}
+        button:nth-child(5){grid-column: 1; grid-row: 2;}
+        button:nth-child(4){grid-column: 2; grid-row: 2;}
+        button:nth-child(4){grid-column: 3; grid-row: 2;}
+        button:nth-child(4){grid-column: 4; grid-row: 2;}
+        button:nth-child(4){grid-column: 1; grid-row: 3;}
+        button:nth-child(4){grid-column: 2; grid-row: 3;}
+        button:nth-child(4){grid-column: 3; grid-row: 3;}
+        button:nth-child(4){grid-column: 4; grid-row: 3;}
+        button:nth-child(4){grid-column: 1; grid-row: 4;}
+        button:nth-child(4){grid-column: 2; grid-row: 4;}
+        button:nth-child(4){grid-column: 3; grid-row: 4;}  
+        button:nth-child(4){grid-column: 4; grid-row: 4;}
+        button:nth-child(4){grid-column: 1; grid-row: 5;}
+        button:nth-child(4){grid-column: 2; grid-row: 5;}
+        button:nth-child(4){grid-column: 3; grid-row: 5;}  
+        button:nth-child(4){grid-column: 4; grid-row: 5;}
+       
+     
+        .times::before{ content: 'x';}
+        .divide::before{content: '\00F7';}
+        .squareroot::before{content: '\221A';}
+
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <form onsubmit="return false">
+            <label ><input type="text" readonly></label>
+          
+        </form>
+
+  
+             
+
+
+        <div class="calculator">
+
+            <div class="col"> <button >AC</button></div>
+
+            <div class="col"> <button class="squareroot"  aria-label="SQUAREROOT"><span hidden>SQUAREROOT</span></button></div>
+             <div class="col"> <button aria-label="modulus">%</button></div>
+
+             <div class="col "> <button class="sign divide" aria-label="divide"><span hidden>/</span></button></div>
+             <div class="col"> <button >7</button></div>
+             <div class="col"> <button >8</button></div>
+             <div class="col"> <button >9</button></div>
+               
+             <div class="col "> <button class="sign times" aria-label="multiply"><span hidden>*</span></button></div>
+
+             
+             <div class="col"> <button >4</button></div>
+             <div class="col"> <button >5</button></div>
+             <div class="col"> <button >6</button></div>
+           
+             <div class="col "> <button class="sign" aria-label="minus">-</button></div>
+
+             <div class="col"> <button >1</button></div>
+             <div class="col"> <button >2</button></div>
+             <div class="col"> <button >3</button></div>
+           
+             <div class="col "> <button class="sign" aria-label="plus">+</button></div>
+             <div class="col"> <button >0</button></div>
+             <div class="col"> <button >.</button></div>
+             <div class="col"> <button class="fa fa-delete-left" aria-label="backspace"><span hidden>DELETE</span></button></div>
+           
+              <div class="col "> <button class="sign" aria-label="equal">=</button></div>
+           
+            
+          
+          
+           
+           
+           
+            </div>
+
+          
+
+
+        </div>
+    </div>
+
+    <script>
+        "use strict";
+
+let input='';
+document.querySelector(".calculator").addEventListener("click" ,function(e){
+
+    const x=e.target.textContent.trim();
+
+    if(e.target.tagName=="BUTTON" &&  e.target.textContent!="=" &&  e.target.textContent!="SQUAREROOT" &&  e.target.textContent!="DELETE" ){
+        input+=x;
+        document.querySelector("input").value=input;
+    }
+    if(e.target.textContent=="="){
+       
+        document.querySelector("input").value=eval(input)
+    }
+   
+
+    if(e.target.textContent=="AC"){
+        input='';
+        document.querySelector("input").value=input;
+    }
+
+   
+
+    if(e.target.textContent=="SQUAREROOT"){
+
+      
+    input=Math.sqrt(eval(input));
+    document.querySelector("input").value=input;
+
+    }
+
+    if(e.target.textContent=="DELETE"){
+
+    //    let inp=document.querySelector("input")
+    //    input=inp.value.substr(0, inp.value.length-1)
+    //    inp.value=input
+   let inp= input.slice(0, -1);
+
+   input=inp;
+   document.querySelector("input").value=input;
+
+  }
+    
+    })
+
+
+
+       
+
+       
+      
+  
+
+
+    </script>
+
+    
+
+
+   
+    
+</body>
+</html>
